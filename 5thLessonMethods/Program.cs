@@ -19,7 +19,7 @@ Console.WriteLine("\n");
 
 //Calls to methods that sum up numbers and return either true or false based on the result
 int sumForOdd;
-bool trysum1 = TrySumIfOdd(2, 4, out sumForOdd);
+bool trysum1 = TrySumIfOdd(2, 5, out sumForOdd);
 Console.WriteLine($"The value of the call to TrySumIfOdd method is {trysum1}, because the sum is {sumForOdd}");
 bool trysum2 = TrySumIfOdd(5, 10, out sumForOdd);
 Console.WriteLine($"The value of the call to TrySumIfOdd method is {trysum2}, because the sum is {sumForOdd}");
@@ -32,10 +32,29 @@ Console.WriteLine(Repeat("Hello", 5));
 Console.WriteLine(Repeat("Bye", 3));
 
 
+
+
+
+
+
 bool TrySumIfOdd(int x1, int x2, out int sumResult)
 {
-    sumResult = x1 + x2;
-    return (x1 + x2)%2 == 1;
+    if (x1 == x2)
+    {
+        Console.WriteLine($"As both numbers are equal, therefore the sum is one of the numbers - {x1}");
+        sumResult = x1;
+        return x1%2 == 1;
+    }
+    else if (x2 < x1)
+    {
+        (x1, x2) = (x2, x1);
+    }
+    sumResult = 0;
+    for (int i = x1; i <= x2; i++)
+    {
+        sumResult += i;
+    }
+    return sumResult%2 == 1;
 }
 
 string Repeat(string x, int n)
