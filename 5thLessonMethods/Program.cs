@@ -68,10 +68,12 @@ string Repeat(string x, int n)
     } 
     public static int MaxInt(int x1, int x2, int x3, int x4)
     {
-        /*if (x1 > x2 && x1 > x3 && x1 > x4) return x1;
+        /*Варіант 1 (рагульний, так краще не робити): if (x1 > x2 && x1 > x3 && x1 > x4) return x1;
         else if (x2 > x3 && x2 > x4) return x2;
         else if (x3 > x4) return x3;
-        else return x4; */
+        else return x4; 
+        Варіант 2 (сьогодні Олексій підказав, хз, як сам не додумався, але він збс):
+        return Math.Max(Math.Max(x1, x2), Math.Max(x3, x4);*/
         int[] arr = { x1, x2, x3, x4 };
         return arr.Max();
     }  
